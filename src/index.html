@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <!-- Link Tailwind CSS from the output.css -->
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class="bg-blue-50 min-h-screen flex items-center justify-center">
+
+    <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white w-full max-w-md mx-auto rounded-lg p-8 shadow-lg">
+        <!-- Search Bar -->
+        <div class="search mb-6 flex">
+            <input type="text" placeholder="Enter city name" spellcheck="false" class="search-input border-2 border-gray-300 outline-none bg-white text-gray-800 px-4 py-2 rounded-l-md w-full focus:border-blue-500" id="city-input">
+            <button class="search-btn bg-blue-500 hover:bg-blue-400 text-white rounded-r-md px-4" id="search-btn">Search</button>
+        </div>
+
+        <!-- Error Message -->
+        <div class="error text-red-500 text-sm mb-4 hidden" id="error-message">
+            Invalid City Name. Please try again.
+        </div>
+
+        <!-- Weather Information -->
+        <div class="weather hidden" id="weather-info">
+            <div class="text-center mb-6">
+                <img src="images/default.png" alt="weather icon" class="weather-icon mx-auto w-24" id="weather-icon">
+                <h1 class="temp text-4xl font-semibold mt-2" id="temperature">22°C</h1>
+                <h2 class="city text-2xl mt-1" id="city-name">New York</h2>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center">
+                    <img src="images/humidity.png" alt="humidity icon" class="w-8 mr-2">
+                    <div>
+                        <p class="humidity text-lg" id="humidity">50%</p>
+                        <p class="text-sm">Humidity</p>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <img src="images/wind.png" alt="wind icon" class="w-8 mr-2">
+                    <div>
+                        <p class="wind text-lg" id="wind-speed">15 km/h</p>
+                        <p class="text-sm">Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extended Forecast -->
+            <div class="extended-forecast mt-6">
+                <h3 class="text-lg font-semibold mb-2">5-Day Forecast</h3>
+                <div class="grid grid-cols-5 gap-4" id="forecast">
+                    <!-- JavaScript will populate this -->
+                </div>
+            </div>
+
+            <!-- Dropdown for Recently Searched Cities -->
+            <div class="recent-search mt-6">
+                <select class="recent-dropdown border-2 border-gray-300 outline-none bg-white text-gray-800 px-4 py-2 rounded-md w-full" id="recent-cities">
+                    <option value="">Select Recent City</option>
+                    <!-- JavaScript will populate this -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
